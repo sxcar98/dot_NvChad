@@ -16,6 +16,7 @@ return {
       after = "nvim-lspconfig",
       config = function()
          require "custom.plugins.null-ls"
+		 require("custom.autodark").setup()
       end,
    },
 
@@ -55,5 +56,4 @@ return {
          }
       end,
    },
-   
 }
