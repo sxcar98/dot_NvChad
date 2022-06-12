@@ -6,10 +6,11 @@ local M = {}
 M.options = {
 
    user = function()
-      opt.tabstop = 4
-      opt.shiftwidth = 4
+      opt.tabstop = 2
+      opt.shiftwidth = 2
       opt.mouse = "c"
       opt.expandtab = false
+      opt.scrolloff = 5
    end,
 }
 

@@ -5,6 +5,13 @@ local M = {}
 --    "<C-n>",
 -- }
 
+M.general = {
+   i = {
+      ["jk"] = { "<ESC>", "Escape" },
+      ["jj"] = { "<ESC>", "Escape" },
+   },
+}
+
 M.truzen = {
    n = {
       ["<leader>ta"] = { "<cmd> TZAtaraxis <CR>", "   truzen ataraxis" },
