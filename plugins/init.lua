@@ -55,10 +55,4 @@ return {
          }
       end,
    },
-
-   ["f-person/auto-dark-mode.nvim"] = {
-      config = function()
-         require("custom.plugins.auto-dark-mode").setup()
-      end,
-   },
 }
