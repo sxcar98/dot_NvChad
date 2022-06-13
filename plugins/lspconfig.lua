@@ -15,7 +15,7 @@ M.setup_lsp = function(attach, capabilities)
 
    local lspconfig = require "lspconfig"
 
-   local servers = { "html", "cssls", "bashls", "emmet_ls", "tsserver", "ccls" }
+   local servers = { "html", "cssls", "bashls", "emmet_ls", "tsserver" }
 
    for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
@@ -23,6 +23,13 @@ M.setup_lsp = function(attach, capabilities)
          capabilities = capabilities,
       }
    end
+
+   lspconfig["clangd"].setup {
+      cmd = {
+         "clangd",
+         "--header-insertion=never",
+      },
+   }
 end
 
 return M
