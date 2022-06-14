@@ -29,6 +29,11 @@ M.setup_lsp = function(attach, capabilities)
          "clangd",
          "--header-insertion=never",
       },
+      on_attach = function(client, bufnr)
+         attach(client, bufnr)
+         client.resolved_capabilities.document_formatting = false
+      end,
+      capabilities = capabilities,
    }
 end
 
