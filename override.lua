@@ -45,9 +45,6 @@ M.blankline = {
 M.cmp = {
    formatting = {
       format = function(entry, vim_item)
-         local icons = require "plugins.configs.lspkind_icons"
-         vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
-
          vim_item.menu = ({
             buffer = "[BUF]",
             nvim_lsp = "[LSP]",
@@ -67,6 +64,12 @@ M.cmp = {
    sources = {
       { name = "nvim_lsp" },
       { name = "nvim_lua" },
+   },
+   mapping = {
+      ["<CR>"] = require("cmp").mapping.confirm {
+         behavior = require("cmp").ConfirmBehavior.Insert,
+         select = false,
+      },
    },
 }
 
